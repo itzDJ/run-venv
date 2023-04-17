@@ -1,0 +1,14 @@
+#!/bin/bash
+
+project=$1
+
+# -z returns true if a string is empty
+if [ -z $project ]; then
+    echo "Usage: run <project>"
+    exit 1
+fi
+
+source $project/venv/bin/activate
+python3 $project
+
+# Usage: ./run python-project.py
